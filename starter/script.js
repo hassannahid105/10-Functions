@@ -32,9 +32,9 @@ const checkIn = function (flightNum, passenger) {
   flightNum = 'LH566';
   passenger.name = 'Mr ' + passenger.name;
   if (passenger.passport === 234567890) {
-    alert('Check In');
+    // alert('Check In');
   } else {
-    alert('Wrong Passport');
+    // alert('Wrong Passport');
   }
 };
 checkIn(flight, passenger);
@@ -157,3 +157,26 @@ console.log(addTax(0.1, 200));
 const addVat = addTax.bind(null, 0.23);
 console.log(addVat(3445));
 console.log(addVat(9000));
+
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+
+console.log(typeof bookEw);
+
+function vat() {
+  return function (rate, value) {
+    return value + value * rate;
+  };
+}
+const now = vat();
+console.log(now(0.34, 345));
+console.log(now(0.12, 3456));
